@@ -6,7 +6,7 @@
 /*   By: hyoshida <hikari.y.0305@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/30 13:57:26 by hyoshida          #+#    #+#             */
-/*   Updated: 2026/06/27 16:46:17 by hyoshida         ###   ########.fr       */
+/*   Updated: 2026/07/10 17:31:00 by hyoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	**prepare_arguments(int argc, char **argv);
 double	compute_disorder(t_stack *stack_a);
 void	print_benchmark(t_config *cfg, double disorder);
 
-// Libft代用（実際の環境に合わせて用意してください）
+// Libft
 int		ft_isdigit(int c);
 int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strdup(const char *s1);
@@ -62,7 +62,7 @@ void	ft_putnbr_fd(int n, int fd);
 t_stack	*ft_lstnew(int value);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
 
-// 命令関数（すべてに t_config *cfg を追加！）
+// 命令関数
 void	sa(t_stack *stack_a, t_config *cfg);
 void	sb(t_stack *stack_b, t_config *cfg);
 void	ss(t_stack *stack_a, t_stack *stack_b, t_config *cfg);
