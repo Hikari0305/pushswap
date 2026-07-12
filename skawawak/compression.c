@@ -6,20 +6,20 @@
 /*   By: skawawak <skawawak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 09:24:56 by skawawak          #+#    #+#             */
-/*   Updated: 2026/07/12 09:25:31 by skawawak         ###   ########.fr       */
+/*   Updated: 2026/07/12 10:00:12 by skawawak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*compress_coordinates(int *num, size_t count)
+size_t	*compress_coordinates(int *num, size_t count)
 {
-	int		*compressed;
+	size_t	*compressed;
 	size_t	rank;
 	size_t	current_idx;
 	size_t	compare_idx;
 
-	compressed = malloc(count * sizeof(int));
+	compressed = malloc(count * sizeof(size_t));
 	if (!compressed)
 		return (NULL);
 	current_idx = 0;
@@ -33,7 +33,7 @@ int	*compress_coordinates(int *num, size_t count)
 				rank++;
 			compare_idx++;
 		}
-		compressed[current_idx] = (int)rank;
+		compressed[current_idx] = rank;
 		current_idx++;
 	}
 	return (compressed);
