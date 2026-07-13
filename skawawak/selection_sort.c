@@ -6,7 +6,7 @@
 /*   By: skawawak <skawawak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 22:33:40 by skawawak          #+#    #+#             */
-/*   Updated: 2026/07/12 09:25:36 by skawawak         ###   ########.fr       */
+/*   Updated: 2026/07/13 21:35:35 by skawawak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	selection_sort(t_stack **stack_a, t_stack **stack_b, size_t size_a,
 {
 	size_t	target;
 
-	target = 1;
+	target = 0;
 	while (size_a > 2)
 	{
 		rotate_a_to_top(stack_a, size_a, get_value_idx(*stack_a, target), cfg);
@@ -37,7 +37,7 @@ void	rotate_a_to_top(t_stack **stack, size_t size_a, size_t target_idx,
 	size_t	rotate_count;
 
 	rotate_count = 0;
-	if (target_idx < (size_a + 1) / 2)
+	if (target_idx < (size_a) / 2)
 	{
 		while (rotate_count < target_idx)
 		{

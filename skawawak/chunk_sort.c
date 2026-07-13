@@ -6,7 +6,7 @@
 /*   By: skawawak <skawawak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 15:48:17 by skawawak          #+#    #+#             */
-/*   Updated: 2026/07/12 12:08:54 by skawawak         ###   ########.fr       */
+/*   Updated: 2026/07/13 21:46:45 by skawawak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,14 @@ void	chunk_sort(t_stack **stack_a, t_stack **stack_b, size_t size_a,
 	size_t	size_b;
 
 	push_chunk_to_b(stack_a, stack_b, size_a, cfg);
-	target = size_a;
+	target = size_a - 1;
 	size_b = size_a;
 	while (*stack_b != NULL)
 	{
 		rotate_b_to_top(stack_b, size_b, get_value_idx(*stack_b, target), cfg);
 		pa(stack_a, stack_b, cfg);
-		target--;
+		if (target > 0)
+			target--;
 		size_b--;
 	}
 }
@@ -57,7 +58,7 @@ void	push_chunk_to_b(t_stack **stack_a, t_stack **stack_b, size_t size_a,
 		while (count_in_chunk < chunk_capacity && *stack_a != NULL)
 		{
 			rotate_a_to_top(stack_a, size_a, get_nearest_value_idx(*stack_a,
-					size_a, (chunk_size * chunk_number)), cfg);
+					size_a, ((chunk_size * chunk_number) - 1)), cfg);
 			pb(stack_a, stack_b, cfg);
 			count_in_chunk++;
 			size_a--;

@@ -6,7 +6,7 @@
 /*   By: skawawak <skawawak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 09:24:56 by skawawak          #+#    #+#             */
-/*   Updated: 2026/07/12 10:00:12 by skawawak         ###   ########.fr       */
+/*   Updated: 2026/07/13 21:35:03 by skawawak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	*compress_coordinates(int *num, size_t count)
 	current_idx = 0;
 	while (current_idx < count)
 	{
-		rank = 1;
+		rank = 0;
 		compare_idx = 0;
 		while (compare_idx < count)
 		{
