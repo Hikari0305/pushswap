@@ -77,5 +77,7 @@ void	print_op_row(const char *n1, int v1, const char *n2, int v2, const char *n3
 
 void	chunk_sort(t_stack **stack_a, t_stack **stack_b, size_t size_a, t_config *cfg);
 size_t	get_value_idx(t_stack *stack, int num);
+void	radix_sort(t_stack **stack_a, t_stack **stack_b, size_t size_a,
+		t_config *cfg);
 
 #endif

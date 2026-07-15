@@ -6,7 +6,7 @@ CFLAGS      = -Wall -Wextra -Werror
 LIBFT_DIR   = ./libft
 LIBFT       = $(LIBFT_DIR)/libft.a
 
-SRCS        = main.c bench_utils.c compression.c op_push.c op_reverse.c op_rotate.c op_swap.c parse_utils.c selection_sort.c utils.c chunk_sort.c
+SRCS        = main.c bench_utils.c compression.c op_push.c op_reverse.c op_rotate.c op_swap.c parse_utils.c selection_sort.c utils.c chunk_sort.c radix_sort.c
 OBJS        = $(SRCS:.c=.o)
 
 all: $(NAME)

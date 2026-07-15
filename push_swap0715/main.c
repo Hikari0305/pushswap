@@ -152,8 +152,10 @@ int	main(int argc, char **argv)
 	select_adaptive_mode(&cfg, disorder);
 	if (cfg.mode == MODE_SIMPLE)
 		selection_sort(&stack_a, &stack_b, get_stack_size(stack_a), &cfg);
-	else
+	else if (cfg.mode == MODE_MEDIUM)
 		chunk_sort(&stack_a, &stack_b, get_stack_size(stack_a), &cfg);
+	else
+		radix_sort(&stack_a, &stack_b, get_stack_size(stack_a), &cfg);
 
 	print_benchmark(&cfg, disorder);
 	return (free_stack(&stack_b), free_stack(&stack_a), 0);
